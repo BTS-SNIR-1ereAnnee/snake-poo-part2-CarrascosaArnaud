@@ -41,7 +41,7 @@ int main()
 	curs_set(0);//Cache le curseur
 
 	//Boucle de déplacement
-	while (true)
+	while (serpent.collision() != TRUE)
 	{
 		if(kbhit())//Si une touche du clavier est touchée
 		{
@@ -49,33 +49,21 @@ int main()
 
 				//Haut
 				case 259:
-				if (derniereDir == TOUCHE_KEY_DOWN)
-					derniereDir=TOUCHE_KEY_DOWN;
-				else
 				derniereDir = TOUCHE_KEY_UP;
 				break;
 
 				//Gauche
 				case 260:
-				if (derniereDir == TOUCHE_KEY_RIGHT)
-					derniereDir=TOUCHE_KEY_RIGHT;
-				else
 				derniereDir = TOUCHE_KEY_LEFT;
 				break;
 
 				//Bas
 				case 258:
-				if (derniereDir == TOUCHE_KEY_UP)
-					derniereDir=TOUCHE_KEY_UP;
-				else
 				derniereDir = TOUCHE_KEY_DOWN;
 				break;
 
 				//Droite
 				case 261:
-				if (derniereDir == TOUCHE_KEY_LEFT)
-					derniereDir=TOUCHE_KEY_LEFT;
-				else
 				derniereDir = TOUCHE_KEY_RIGHT;
 				break;
 			}
@@ -87,10 +75,9 @@ int main()
 
 		serpent.afficheSerpent();//Affiche le serpent
 		usleep (100000);//Temps de délai en micro secondes
-		if (serpent.collision() == TRUE){
+	}
+
 			clear();
 			fenetre->kill();
 			return 0;
-		}
-	}
 };

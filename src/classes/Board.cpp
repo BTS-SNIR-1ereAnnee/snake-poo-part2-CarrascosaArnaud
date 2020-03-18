@@ -32,8 +32,8 @@ Board::Board()
 {
     initscr();
     clear();
-    int m_sizeX = 20;
-    int m_sizeY = 30;
+    m_sizeY = 20;
+    m_sizeX = 30;
     this->dessinerPlateau();
 }
 
@@ -45,7 +45,7 @@ Board::~Board()
 
 void Board::dessinerPlateau()
 {
-    this->m_boite = subwin(stdscr, m_sizeX, m_sizeY, 0, 0);
+    this->m_boite = subwin(stdscr, m_sizeY, m_sizeX, 0, 0);
 
     box(this->m_boite, ACS_VLINE, ACS_HLINE); // ACS_VLINE et ACS_HLINE sont des constantes qui génèrent des bordures par défaut
     wrefresh(m_boite);
