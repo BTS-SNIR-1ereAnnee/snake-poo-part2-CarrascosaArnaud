@@ -8,13 +8,11 @@ using namespace std;
 Point::Point()
 {
     m_x = m_y = 10;
-	cout<<"quelque chose"<< endl;
 }
 Point::Point(int x, int y)
 {
     this->m_x = x;
     this->m_y = y;
-	cout<<"quelque chose"<< endl;
 }
 
 void Point::setPoint(int x, int y)
@@ -63,21 +61,23 @@ void Point::setY(int val)
     m_y = val;
 }
 
-
+//Dessine les points
 void Point::drawPoint()
 {
     Board *b;
-    b = Board::getInstance(); // dessine les points 
+    b = Board::getInstance(); 
     b->dessinerPoint(*this);
 }
 
+//Efface les points 
 void Point::erasePoint()  
 {
     Board *b;
-    b = Board::getInstance(); //efface les points 
+    b = Board::getInstance();
     b->effacerPoint(*this);
 }
 
+//Envois les coordonnées du point
 void Point::debug()
 {
     cout << "(" << this->m_x << "," << this->m_y << ")";
