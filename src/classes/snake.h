@@ -29,11 +29,10 @@ public:
     void move(int direction); // déplacement du serpent
 
 
-    /** affiche le serpent
-    */
-    void affichSerpent();
+    //Affiche le serpent
+    void afficheSerpent();
 
-
+    bool collision();
 private:
     /** tableau de point, corps du serpent*/
     Point serpent[50];

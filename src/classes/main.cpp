@@ -38,6 +38,7 @@ int main()
     fenetre = Board::getInstance ();//Création de l'objet
     snake serpent(10,4);//Création d'un objet de la classe serpentt 
 	keypad (stdscr,true);//Permet de faire bouger le snake
+	curs_set(0);//Cache le curseur
 
 	//Boucle de déplacement
 	while (true)
@@ -45,29 +46,51 @@ int main()
 		if(kbhit())//Si une touche du clavier est touchée
 		{
 			switch (getch()){//Prend l'input de l'utilisateur
+
+				//Haut
 				case 259:
-				derniereDir = TOUCHE_KEY_UP;//Haut
+				if (derniereDir == TOUCHE_KEY_DOWN)
+					derniereDir=TOUCHE_KEY_DOWN;
+				else
+				derniereDir = TOUCHE_KEY_UP;
 				break;
+
+				//Gauche
 				case 260:
-				derniereDir = TOUCHE_KEY_LEFT;//Gauche
+				if (derniereDir == TOUCHE_KEY_RIGHT)
+					derniereDir=TOUCHE_KEY_RIGHT;
+				else
+				derniereDir = TOUCHE_KEY_LEFT;
 				break;
+
+				//Bas
 				case 258:
-				derniereDir = TOUCHE_KEY_DOWN;//Bas
+				if (derniereDir == TOUCHE_KEY_UP)
+					derniereDir=TOUCHE_KEY_UP;
+				else
+				derniereDir = TOUCHE_KEY_DOWN;
 				break;
+
+				//Droite
 				case 261:
-				derniereDir = TOUCHE_KEY_RIGHT;//Droite
+				if (derniereDir == TOUCHE_KEY_LEFT)
+					derniereDir=TOUCHE_KEY_LEFT;
+				else
+				derniereDir = TOUCHE_KEY_RIGHT;
 				break;
 			}
-			serpent.move (derniereDir);
+			serpent.move(derniereDir);
 
 		}else{//Pour que le serpent bouge sans avoir à appuyer sur une touche
-			serpent.move (derniereDir);
+			serpent.move(derniereDir);
 		}
 
-		serpent.affichSerpent();//Affiche le serpent
-		usleep (150000);//Temps de délai en micro secondes
+		serpent.afficheSerpent();//Affiche le serpent
+		usleep (100000);//Temps de délai en micro secondes
+		if (serpent.collision() == TRUE){
+			clear();
+			fenetre->kill();
+			return 0;
+		}
 	}
-	
-	fenetre->kill();
-	return 0;
 };

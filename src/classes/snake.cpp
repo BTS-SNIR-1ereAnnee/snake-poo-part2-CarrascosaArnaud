@@ -24,7 +24,7 @@ snake::snake(int x,int y)
 }
 
 
-void snake::affichSerpent()
+void snake::afficheSerpent()
 {
     /**Parcours du tableau*/
     for(int d = 0; d < longeur; d++)
@@ -62,3 +62,11 @@ void snake::move(int direction)
 
 }
 
+bool snake::collision(){
+    Board *b;
+    b = Board::getInstance(); 
+    if(serpent[0].getX() == 0 || serpent[0].getY() == 0 || serpent[0].getX() == b->getSizeX() || serpent[0].getY() == b->getSizeY()){
+        return TRUE;
+    }
+    return FALSE;
+}

@@ -18,12 +18,16 @@ public:
     static void kill ();
     void dessinerPoint(Point &p);
     void effacerPoint(Point &p);
+    int getSizeX() const;
+    int getSizeY() const;
 private:
     static Board *_singleton;
     WINDOW *m_boite;
     Board();
     ~Board();
     void dessinerPlateau();
+    int m_sizeX;
+    int m_sizeY;
 
 };
 
