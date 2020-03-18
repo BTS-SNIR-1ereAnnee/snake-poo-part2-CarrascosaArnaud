@@ -1,0 +1,9 @@
+# Travail réalisé
+Compiler et tester le comportement
+Indenter et commenter le main.cpp et le snake.cpp
+
+# Remarques
+Au premier test de comportement, nous voyons que la collision avec les bordures n'a pas l'effet désiré
+
+#Sources
+https://github.com/ajpaulson/learning-ncurses/blob/master/kbhit.c
