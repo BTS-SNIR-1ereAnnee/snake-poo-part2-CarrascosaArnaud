@@ -40,7 +40,7 @@ Board::Board()
 Board::~Board()
 {
     endwin();//RAZ du curseur
-    cout<<"Destruction du plateau"<<endl;
+    cout<<"Fin de la partie"<<endl;
 }
 
 void Board::dessinerPlateau()
@@ -54,7 +54,7 @@ void Board::dessinerPlateau()
 
 void Board::dessinerPoint(Point &p){
     wmove(m_boite, p.getY(), p.getX());
-    waddch(m_boite,'*');
+    waddch(m_boite,p.getChar());
     wrefresh(m_boite);
 
 }

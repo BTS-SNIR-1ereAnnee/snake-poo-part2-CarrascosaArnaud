@@ -8,11 +8,21 @@ using namespace std;
 Point::Point()
 {
     m_x = m_y = 10;
+    m_char = '*';
 }
+
 Point::Point(int x, int y)
 {
     this->m_x = x;
     this->m_y = y;
+    m_char = '*';
+}
+
+Point::Point(int x, int y, char carac)
+{
+    this->m_x = x;
+    this->m_y = y;
+    m_char = carac;
 }
 
 void Point::setPoint(int x, int y)
@@ -81,6 +91,14 @@ void Point::erasePoint()
 void Point::debug()
 {
     cout << "(" << this->m_x << "," << this->m_y << ")";
+}
+
+void Point::setChar(char carac){
+    m_char = carac;
+}
+
+char Point::getChar(){
+    return m_char;
 }
 
 Point::~Point()

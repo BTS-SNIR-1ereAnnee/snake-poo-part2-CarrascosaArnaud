@@ -32,16 +32,15 @@ int kbhit(void)
 
 int main()
 {
-
-	int derniereDir=TOUCHE_KEY_DOWN;//Déplace le serpent vers le bas au lancement
+	int derniereDir=TOUCHE_KEY_UP;//Déplace le serpent vers le bas au lancement
     Board *fenetre;//Crée un pointeur de type board
     fenetre = Board::getInstance ();//Création de l'objet
-    snake serpent(10,4);//Création d'un objet de la classe serpentt 
+    snake serpent(10,10);//Création d'un objet de la classe serpent
 	keypad (stdscr,true);//Permet de faire bouger le snake
 	curs_set(0);//Cache le curseur
 
 	//Boucle de déplacement
-	while (serpent.collision() != TRUE)
+	while (!(serpent.collisionBord() == TRUE || serpent.collisionSerpent() == TRUE))
 	{
 		if(kbhit())//Si une touche du clavier est touchée
 		{

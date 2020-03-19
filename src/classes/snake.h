@@ -32,10 +32,12 @@ public:
     //Affiche le serpent
     void afficheSerpent();
 
-    bool collision();
+    bool collisionBord();
+
+    bool collisionSerpent();
 private:
     /** tableau de point, corps du serpent*/
     Point serpent[50];
     /** longueur du serpent */
-    int longeur = 3;
+    int taille = 3;
 };
