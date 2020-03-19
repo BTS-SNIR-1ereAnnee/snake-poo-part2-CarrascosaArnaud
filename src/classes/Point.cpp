@@ -31,24 +31,31 @@ void Point::setPoint(int x, int y)
     this->m_y = y;
 }
 
+
+
 void Point::moveDown()
 {
     m_y++;
 }
+
 
 void Point::moveUp()
 {
     m_y--;
 }
 
+
 void Point::moveRight()
 {
     m_x++;
 }
+
+
 void Point::moveLeft()
 {
     m_x--;
 }
+
 
 int Point::getX() const
 {
@@ -61,10 +68,12 @@ void Point::setX(int val)
     m_x = val;
 }
 
+
 int Point::getY() const
 {
     return m_y;
 }
+
 
 void Point::setY(int val)
 {
@@ -93,10 +102,12 @@ void Point::debug()
     cout << "(" << this->m_x << "," << this->m_y << ")";
 }
 
+//Setter de char
 void Point::setChar(char carac){
     m_char = carac;
 }
 
+//Getter de char
 char Point::getChar(){
     return m_char;
 }

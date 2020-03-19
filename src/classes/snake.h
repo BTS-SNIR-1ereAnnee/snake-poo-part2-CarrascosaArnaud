@@ -31,10 +31,11 @@ public:
 
     //Affiche le serpent
     void afficheSerpent();
-
+    //Arrête le jeu quand le serpent touche un bord
     bool collisionBord();
-
+    //Arrête le jeu quand le serpent se touche lui même
     bool collisionSerpent();
+    
 private:
     /** tableau de point, corps du serpent*/
     Point serpent[50];

@@ -40,7 +40,7 @@ int main()
 	curs_set(0);//Cache le curseur
 
 	//Boucle de déplacement
-	while (!(serpent.collisionBord() == TRUE || serpent.collisionSerpent() == TRUE))
+	while (!(serpent.collisionBord() || serpent.collisionSerpent()))//Vérifie que le serpent n'heurte rien
 	{
 		if(kbhit())//Si une touche du clavier est touchée
 		{
@@ -66,7 +66,7 @@ int main()
 				derniereDir = TOUCHE_KEY_RIGHT;
 				break;
 			}
-			serpent.move(derniereDir);
+			serpent.move(derniereDir);//Déplace le serpent
 
 		}else{//Pour que le serpent bouge sans avoir à appuyer sur une touche
 			serpent.move(derniereDir);
@@ -75,7 +75,7 @@ int main()
 		serpent.afficheSerpent();//Affiche le serpent
 		usleep (100000);//Temps de délai en micro secondes
 	}
-
+			//Ferme proprement
 			clear();
 			fenetre->kill();
 			return 0;
