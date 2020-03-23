@@ -15,6 +15,7 @@ public:
     /** Constructeur */
     Point(int x, int y);
     Point(int x, int y, char carac);
+    Point(char carac);
 
     /** Default destructor */
     virtual ~Point();
