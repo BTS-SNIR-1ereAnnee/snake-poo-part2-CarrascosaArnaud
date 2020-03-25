@@ -30,12 +30,18 @@ Point::Point(char carac)
     m_char = carac;
 }
 
+bool operator==(Point const& a, Point const& b){
+    if (a.getX() == b.getX() && a.getY() == b.getY())
+        return TRUE;
+    else
+        return FALSE;
+}
+
 void Point::setPoint(int x, int y)
 {
     this->m_x = x;
     this->m_y = y;
 }
-
 
 
 void Point::moveDown()

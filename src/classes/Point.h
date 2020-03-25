@@ -17,6 +17,7 @@ public:
     Point(int x, int y, char carac);
     Point(char carac);
 
+
     /** Default destructor */
     virtual ~Point();
 
@@ -78,5 +79,6 @@ private:
     int m_y; //!< Member variable "m_y"
     char m_char;
 };
+    bool operator==(Point const& a, Point const& b);
 
 #endif // POINT_H

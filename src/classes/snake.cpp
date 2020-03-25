@@ -78,7 +78,7 @@ bool snake::collisionSerpent(){
 
     for(int i=1;i<taille;i++)
     {
-        if(serpent[0].getX()==serpent[i].getX() && serpent[0].getY()==serpent[i].getY()){
+        if(serpent[0]==serpent[i]){
             return TRUE;
         }
     }
